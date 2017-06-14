@@ -5,16 +5,28 @@ class Comments extends Component {
     super(props)
 
     this.state = {
-      comment: ''
+      comment: '',
+      comments: []
     }
 
     this.updateComment = this.updateComment.bind(this)
+    this.addComment = this.addComment.bind(this)
   }
 
   updateComment(ev) {
     this.setState({
       comment: ev.target.value
-    }, () => console.log(this.state))
+    })
+  }
+
+  addComment(ev) {
+    const state = {...this.state}
+    const comment = {
+      time: new Date(),
+      text: this.state.comment
+    }
+    state.comments.push(comment)
+    this.setState(state, () => console.log(this.state))
   }
 
   render() {
@@ -25,7 +37,7 @@ class Comments extends Component {
           onChange={this.updateComment}
           placeholder="Enter comment here">
         </textarea>
-        <button className="button">Submit comment</button>
+        <button className="button" onClick={this.addComment}>Submit comment</button>
       </div>
     )
   }
