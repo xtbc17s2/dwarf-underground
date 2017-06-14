@@ -26,7 +26,8 @@ class Comments extends Component {
       text: this.state.comment
     }
     state.comments.push(comment)
-    this.setState(state, () => console.log(this.state))
+    state.comment = ''
+    this.setState(state)
   }
 
   render() {
@@ -38,9 +39,18 @@ class Comments extends Component {
           placeholder="Enter comment here">
         </textarea>
         <button className="button" onClick={this.addComment}>Submit comment</button>
+        {this.state.comments.map((comment, i) => <Comment key={i} comment={comment} />)}
       </div>
     )
   }
+}
+
+function Comment (props) {
+  return (
+    <div className="comment">
+      <div>{props.comment.text}</div>
+    </div>
+  )
 }
 
 export default Comments
