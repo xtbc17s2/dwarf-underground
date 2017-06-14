@@ -29,7 +29,7 @@ class OtherArticles extends Component {
     return(
       <div className="small-12 columns other-articles">
         <h2>From around the Realm</h2>
-        {articleData.map(article => <OtherArticle article={article} />)}
+        {articleData.map((article, i) => <OtherArticle key={i} article={article} />)}
       </div>
     )
   }
