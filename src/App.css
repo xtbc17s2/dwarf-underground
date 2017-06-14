@@ -6,18 +6,3 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cinzel Decorative', cursive;
 }
-
-footer {
-  height: 4em;
-  background-color: #333;
-  border-top: 1px solid #666;
-}
-
-footer h6 {
-  color: #666;
-  line-height: 4em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  display: inline-block;
-}
-

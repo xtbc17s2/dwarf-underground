@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './Header'
 import MainContent from './MainContent'
+import Footer from './Footer'
 
 class App extends Component {
   render() {
@@ -12,10 +13,7 @@ class App extends Component {
 
         <MainContent />
 
-        <footer className="expanded row">
-          <h6>&copy; 2017 Erebor Industries</h6>
-          <h6 className="float-right">All rights reserved</h6>
-        </footer>
+        <Footer />
       </div>
     );
   }
