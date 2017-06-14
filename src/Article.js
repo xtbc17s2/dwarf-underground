@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import './Article.css'
 
 class Article extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      showComments: true
+    }
+  }
   render() {
     return (
       <div className="large-8 medium-12 columns article">
@@ -38,6 +45,7 @@ class Article extends Component {
             <span className="article-link-text">Share Post</span>
           </a>
         </div>
+        {this.state.showComments ? <p>Comments!</p> : null}
       </div>
     )
   }
